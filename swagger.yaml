@@ -1,0 +1,50 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: "mondiali"
+  description: Polls is a simple API allowing consumers to view polls and vote in them.
+  license:
+    name: MIT
+    url: https://github.com/apiaryio/polls-api/blob/master/LICENSE
+host: polls.apiblueprint.org
+basePath: /
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /infoTeam:
+    get:
+      description: 'Ritorna le informazioni di un team'
+      produces:
+            - application/json
+      responses:
+        200:
+          description: Informazioni del team
+          schema:
+            $ref: "#/definitions/team"
+  /addTeam:
+    post:
+      description: 'Aggiunge un Team'
+      responses:
+        200:
+          description: 'Aggiunto'
+  /addMatch:
+    put:
+      description: 'Aggiunge un Match'
+      responses:
+        200:
+          description: 'Match aggiunto'
+definitions:
+  team:
+    type: object
+    properties:
+      Name:
+        type: string
+      Matches:
+        type: array
+      is_still_in:
+        type: boolean
+        description: In gioco

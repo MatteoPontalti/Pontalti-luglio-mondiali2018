@@ -15,7 +15,7 @@ consumes:
 produces:
 - application/json
 paths:
-  /infoteam:
+  /infoTeam:
     get:
       description: 'Ritorna le informazioni di un team'
       produces:
@@ -25,7 +25,7 @@ paths:
           description: Informazioni del team
           schema:
             $ref: "#/definitions/team"
-  /addNewTeam:
+  /addTeam:
     post:
       description: 'Aggiunge un Team'
       responses:

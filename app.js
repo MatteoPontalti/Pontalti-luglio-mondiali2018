@@ -27,6 +27,7 @@ app.get('/', function(req, res) {
   res.send('Server running');
 });
 
+//aggiunge un team
 app.post('/addTeam', function(req, res) {
   let team = req.body;
   let i = teams.findIndex(item => {
@@ -43,6 +44,7 @@ app.post('/addTeam', function(req, res) {
   }
 });
 
+//da informaioni su un team aggiunto
 app.get('/infoTeam/:teamName', function(req, res) {
   let Name = req.params.teamName;
   let i = teams.findIndex(item => {
@@ -54,6 +56,7 @@ app.get('/infoTeam/:teamName', function(req, res) {
   }
 });
 
+//aggiunge un match 
 app.put('/addMatch/:teamName/matches', function(req, res) {
   let Name = req.params.teamName;
   let i = teams.findIndex(item => {
@@ -68,8 +71,8 @@ app.put('/addMatch/:teamName/matches', function(req, res) {
   }
 });
 
-//debug
-app.get('/teams', function(req, res) {
+//testare se funziona
+app.get('/test', function(req, res) {
   for (var x in teams) {
     console.log(teams[x]);
   }

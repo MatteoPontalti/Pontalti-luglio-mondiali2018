@@ -47,4 +47,4 @@ definitions:
         type: array
       is_still_in:
         type: boolean
-        description: Ancora in
+        description: In gioco
